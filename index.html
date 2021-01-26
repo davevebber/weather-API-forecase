@@ -4,64 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Forecase</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" src="./assets/css/style.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    </link>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    </link>
+    <title>Weather Forecast</title>
 </head>
 
 <body>
- 
     <nav class="navbar navbar-dark bg-dark">
         <h1 class="navbar-brand">Weather Dashboard</h1>
     </nav>
 
     <br>
 
-    <aside class="search-box">
-        <div>
-            <h4>Search for City</h4>
-            <input type="text" placeholder="Search for a city here">
-            <button>Search</button>
-        </div>
+    <div class="container">
+        <div class="row">
 
-        <div class="previous-searches">
-            <h4>Previous Searches</h4>
-        </div>
-    </aside>
+            <div class="col-4">
+                <section class="search-box">
+                    <div>
+                        <h4>Search for City:</h4>
+                        <input class="inputField" type="text" placeholder="Search here">
+                        <button>Search</button>
+                    </div>
 
-    <br>
+                    <div>
+                        <h4>Previous Searches</h4>
+                        <p>Austin</p>
+                        <p>California</p>
+                        <p>Rhode Island</p>
+                        <p>Seattle</p>
+                        <p>Long Beach</p>
+                    </div>
+                </section>
+            </div>
+            <br>
 
-    <section class="current-weather">
-        <h4>Searched City Name</h4>
+            <div class="col-8">
+                <section class="current-box">
+                    <h4>Searched City Name</h4>
 
-        <p>Temperature</p>
-        <p>Humidity</p>
-        <p>Wind Speed</p>
-        <p>UV Index</p>
-    </section>
+                    <p>Temperature:</p>
+                    <p>Humidity:</p>
+                    <p>Wind Speed:</p>
+                    <p>UV Index:</p>
+                </section>
 
-    <br>
+                <br>
 
-    <section class="fiveDay-forecast">
-        <h4>Five Day Forecast</h4>
+                <section class="forecast-box">
+                    <h4>Five Day Forecast</h4>
 
-        <div class="container">
-            <div class="row">
-
-                <div class="col-1">Day 1</div>
-                <div class="col-1">Day 2</div>
-                <div class="col-1">Day 3</div>
-                <div class="col-1">Day 4</div>
-                <div class="col-1">Day 5</div>
+                    <div class="container">
+                        <div class="row">
+                            <div id="card" class="col-3">Day 1</div>
+                            <div id="card" class="col-3">Day 2</div>
+                            <div id="card" class="col-3">Day 3</div>
+                            <div id="card" class="col-3">Day 4</div>
+                        </div>
+                    </div>
+                </section>
             </div>
 
+
         </div>
-    </section>
 
-
-
-
-
+    </div>
 
 
 

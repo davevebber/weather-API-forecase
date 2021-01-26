@@ -1,21 +1,32 @@
-nav h1 {
-    padding: 0;
-    margin: 0;
-    font-size: 32px;
-};
+body h4 {
+    font-size: 1rem;
+}
 
 .search-box {
     border: 2px solid black;
-};
+    padding: 10px;
+}
 
-.previous-searches {
-    border: 2px solid black;
-};
+.inputField {
+    width: 100%;
+    margin-bottom: 5px;
+}
 
-.current-weather {
+.current-box {
     border: 2px solid black;
-};
+    padding: 10px;
+}
 
-.fiveDay-forecast {
+.forecast-box {
     border: 2px solid black;
-};
+    padding: 10px;
+}
+
+#card {
+    border: 1px solid black;
+    background-color: rgb(82, 174, 254);
+    font-size: 12px;
+    text-align: center;
+    height: 100px;
+
+}
