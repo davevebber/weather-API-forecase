@@ -2,17 +2,22 @@
 const apiKey = 'd748733e2081840aba6654717752a32b';
 const searchBtn = document.querySelector('#searchBtn');
 const currentBox = document.querySelector('.current-box');
-const forecastBox = document.querySelector('.forecast-box')
+const forecastBox = document.querySelector('.forecast-box');
 
 // dates
 let date = (moment().format('ddd, MMM Do'));
-let dateOne = moment().add(1,'days').format('MMM Do');
-let dateTwo = moment().add(2,'days').format('MMM Do');
-let dateThree = moment().add(3,'days').format('MMM Do');
-let dateFour = moment().add(4,'days').format('MMM Do');
+let dateOne = moment().add(1, 'days').format('MMM Do');
+let dateTwo = moment().add(2, 'days').format('MMM Do');
+let dateThree = moment().add(3, 'days').format('MMM Do');
+let dateFour = moment().add(4, 'days').format('MMM Do');
 
 // variables
 let searchArr = []
+let currentDayIcon = document.querySelector('#currentIcon');
+let dayOneIcon = document.querySelector('#dayOneIcon');
+let dayTwoIcon = document.querySelector('#dayTwoIcon');
+let dayThreeIcon = document.querySelector('#dayThreeIcon');
+let dayFourIcon = document.querySelector('#dayFourIcon');
 
 // for current day weather
 let cityName = document.querySelector('#cityName');
@@ -45,9 +50,6 @@ let dayFourUV = document.querySelector('#dayFourUV');
 
 
 function getCityWeather() {
-    currentBox.classList.remove('hide');
-    forecastBox.classList.remove('hide');
-
     let searchCity = document.querySelector('#searchCity').value;
     localStorage.setItem('searchHistory', searchCity);
 
@@ -56,9 +58,15 @@ function getCityWeather() {
             return response.json();
         })
         .then(function (data) {
+            console.log(data);
+
+            // create icon
+            iconCode = data.weather[0].icon
+            currentDayIcon.src = 'https://openweathermap.org/img/wn/' + iconCode + '.png';
 
             // current day weather info
             cityName.innerHTML = data.name + ': ' + date;
+
             temp.innerHTML = 'Temperature: ' + data.main.temp + '°F';
             humid.innerHTML = 'Humidity: ' + data.main.humidity + '%';
             wind.innerHTML = 'Wind Speed: ' + data.wind.speed + ' MPH';
@@ -72,32 +80,54 @@ function getCityWeather() {
                     // current day UV index
                     uv.innerHTML = 'UV Index: ' + data.current.uvi
 
+                    // icons for forecast day 1
+                    dayOneIconCode = data.daily[0].weather[0].icon
+                    dayOneIcon.src = 'https://openweathermap.org/img/wn/' + dayOneIconCode + '.png';
+
+                    // icons for forecast day 2
+                    dayTwoIconCode = data.daily[1].weather[0].icon
+                    dayTwoIcon.src = 'https://openweathermap.org/img/wn/' + dayTwoIconCode + '.png';
+
+                    // icons for forecast day 3
+                    dayThreeIconCode = data.daily[2].weather[0].icon
+                    dayThreeIcon.src = 'https://openweathermap.org/img/wn/' + dayThreeIconCode + '.png';
+
+                    // icons for forecast day 4
+                    dayFourIconCode = data.daily[3].weather[0].icon
+                    dayFourIcon.src = 'https://openweathermap.org/img/wn/' + dayFourIconCode + '.png';
+
                     // forecast day 1
                     dayOneDate.innerHTML = dateOne;
+
+                    dayOneIconCode = data.daily[0].weather[0].icon
+                    dayOneIcon.src = 'https://openweathermap.org/img/wn/' + dayOneIconCode + '.png';
+
                     dayOneTemp.innerHTML = 'Temp: ' + data.daily[0].temp.day + '°F';
                     dayOneWind.innerHTML = 'Wind Speed: ' + data.daily[0].wind_speed + ' MPH';
                     dayOneUV.innerHTML = 'UV Index: ' + data.daily[0].uvi;
-                   
+
                     // forecast day 2
                     dayTwoDate.innerHTML = dateTwo;
                     dayTwoTemp.innerHTML = 'Temp: ' + data.daily[1].temp.day + '°F';
                     dayTwoWind.innerHTML = 'Wind Speed: ' + data.daily[1].wind_speed + ' MPH';
                     dayTwoUV.innerHTML = 'UV Index: ' + data.daily[1].uvi;
-                   
+
                     // forecast day 3
                     dayThreeDate.innerHTML = dateThree;
                     dayThreeTemp.innerHTML = 'Temp: ' + data.daily[2].temp.day + '°F';
                     dayThreeWind.innerHTML = 'Wind Speed: ' + data.daily[2].wind_speed + ' MPH';
                     dayThreeUV.innerHTML = 'UV Index: ' + data.daily[2].uvi;
-                    
+
                     // forecast day 4
                     dayFourDate.innerHTML = dateFour;
                     dayFourTemp.innerHTML = 'Temp: ' + data.daily[3].temp.day + '°F';
                     dayFourWind.innerHTML = 'Wind Speed: ' + data.daily[3].wind_speed + ' MPH';
                     dayFourUV.innerHTML = 'UV Index: ' + data.daily[3].uvi;
-                    
+
                 });
         });
+    currentBox.classList.remove('hide');
+    forecastBox.classList.remove('hide');
 };
 
 
