@@ -27,6 +27,10 @@ let humid = document.querySelector('#humid');
 let wind = document.querySelector('#wind');
 let uv = document.querySelector('#uv');
 
+// UVI warnings
+let yellowWarning = document.querySelector('#uv-warning-yellow');
+let redWarning = document.querySelector('#uv-warning-red');
+
 // for forecast weather
 let dayOneDate = document.querySelector('#dayOneDate');
 let dayOneTemp = document.querySelector('#dayOneTemp');
@@ -78,7 +82,14 @@ function getCityWeather() {
                 .then(function (data) {
                     console.log(data);
                     // current day UV index
-                    uv.innerHTML = 'UV Index: ' + data.current.uvi
+                    uv.innerHTML = 'UV Index: ' + data.current.uvi;
+
+                    // which warning icon to display 
+                       if (data.current.uvi < 7) {
+                            yellowWarning.classList.remove('hide');
+                       } else {
+                           redWarning.classList.remove('hide');
+                       }
 
                     // icons for forecast day 1
                     dayOneIconCode = data.daily[0].weather[0].icon
@@ -123,7 +134,6 @@ function getCityWeather() {
                     dayFourTemp.innerHTML = 'Temp: ' + data.daily[3].temp.day + '°F';
                     dayFourWind.innerHTML = 'Wind Speed: ' + data.daily[3].wind_speed + ' MPH';
                     dayFourUV.innerHTML = 'UV Index: ' + data.daily[3].uvi;
-
                 });
         });
     currentBox.classList.remove('hide');
