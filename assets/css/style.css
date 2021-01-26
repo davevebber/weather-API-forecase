@@ -34,3 +34,7 @@ body h4 {
     border-bottom: 1px solid black;
     width: 75%;
 }
+
+.hide {
+    display: none;
+}
