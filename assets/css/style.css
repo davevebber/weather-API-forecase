@@ -1,5 +1,5 @@
 body h4 {
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .search-box {
@@ -26,7 +26,11 @@ body h4 {
     border: 1px solid black;
     background-color: rgb(82, 174, 254);
     font-size: 12px;
-    text-align: center;
-    height: 100px;
+    height: 150px;
 
+}
+
+.search-box p {
+    border-bottom: 1px solid black;
+    width: 75%;
 }

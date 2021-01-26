@@ -25,8 +25,8 @@
                 <section class="search-box">
                     <div>
                         <h4>Search for City:</h4>
-                        <input class="inputField" type="text" placeholder="Search here">
-                        <button>Search</button>
+                        <input id="searchCity" class="inputField" type="text" placeholder="Search here">
+                        <button id="searchBtn">Search</button>
                     </div>
 
                     <div>
@@ -43,27 +43,44 @@
 
             <div class="col-8">
                 <section class="current-box">
-                    <h4>Searched City Name</h4>
+                    <h4 id="cityName">Search a city for weather information</h4>
 
-                    <p>Temperature:</p>
-                    <p>Humidity:</p>
-                    <p>Wind Speed:</p>
-                    <p>UV Index:</p>
+                    <p id="temp"></p>
+                    <p id="humid"></p>
+                    <p id="wind"></p>
+                    <p id="uv"></p>
                 </section>
 
                 <br>
 
                 <section class="forecast-box">
-                    <h4>Five Day Forecast</h4>
+                    <h4>Four Day Forecast:</h4>
 
                     <div class="container">
                         <div class="row">
-                            <div id="card" class="col-3">Day 1</div>
-                            <div id="card" class="col-3">Day 2</div>
-                            <div id="card" class="col-3">Day 3</div>
-                            <div id="card" class="col-3">Day 4</div>
-                        </div>
-                    </div>
+                            <div id="card" class="col-3">
+                                <p id="dayOneDate">Day 1</p>
+                                <p id="dayOneTemp">Temp:</p>
+                                <p id="dayOneWind">Wind Speed:</p>
+                                <p id="dayOneUV">UV Index:</p>
+                            </div>
+                            <div id="card" class="col-3">
+                                <p id="dayTwoDate">Day 1</p>
+                                <p id="dayTwoTemp">Temp:</p>
+                                <p id="dayTwoWind">Wind Speed:</p>
+                                <p id="dayTwoUV">UV Index:</p>
+                            </div>
+                            <div id="card" class="col-3">
+                                <p id="dayThreeDate">Day 1</p>
+                                <p id="dayThreeTemp">Temp:</p>
+                                <p id="dayThreeWind">Wind Speed:</p>
+                                <p id="dayThreeUV">UV Index:</p>
+                            </div>
+                            <div id="card" class="col-3">
+                                <p id="dayFourDate">Day 1</p>
+                                <p id="dayFourTemp">Temp:</p>
+                                <p id="dayFourWind">Wind Speed:</p>
+                                <p id="dayFourUV">UV Index:</p>
                 </section>
             </div>
 
