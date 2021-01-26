@@ -1,0 +1,21 @@
+nav h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 32px;
+};
+
+.search-box {
+    border: 2px solid black;
+};
+
+.previous-searches {
+    border: 2px solid black;
+};
+
+.current-weather {
+    border: 2px solid black;
+};
+
+.fiveDay-forecast {
+    border: 2px solid black;
+};
