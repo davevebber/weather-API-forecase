@@ -8,6 +8,7 @@
     </link>
     <link rel="stylesheet" href="./assets/css/style.css">
     </link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Weather Forecast</title>
 </head>
 
@@ -26,18 +27,20 @@
                     <div>
                         <h4>Search for City:</h4>
                         <input id="searchCity" class="inputField" type="text" placeholder="Search here">
-                        <svg id="searchBtn" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                          </svg>
+                        <svg id="searchBtn" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
                     </div>
-<br>
-                    <div>
+                    <br>
+                    <div id="search-history">
                         <h4>Previous Searches</h4>
-                        <p>Austin</p>
-                        <p>California</p>
-                        <p>Rhode Island</p>
-                        <p>Seattle</p>
-                        <p>Long Beach</p>
+                        <p id="first-search"></p>
+                        <p id="second-search"></p>
+                        <p id="third-search"></p>
+                        <p id="fourth-search"></p>
+                        <p id="fifth-search"></p>
                     </div>
                 </section>
             </div>
@@ -52,8 +55,10 @@
                     <p id="humid"></p>
                     <p id="wind"></p>
                     <p id="uv"></p>
-                    <span id="uv-warning-yellow" class="hide"><img class="warning-icon" src="./assets/images/warning-yello.jpg"></span>
-                    <span id="uv-warning-red" class="hide"><img class="warning-icon" src="./assets/images/warning-red.png"></span>
+                    <span id="uv-warning-yellow" class="hide"><img class="warning-icon"
+                            src="./assets/images/warning-yello.jpg"></span>
+                    <span id="uv-warning-red" class="hide"><img class="warning-icon"
+                            src="./assets/images/warning-red.png"></span>
                 </section>
 
                 <br>
