@@ -97,7 +97,7 @@ function getCityWeather() {
     fifthSearch.innerHTML = searchHistoryArr[4];
 
 
-        fetch('http://api.openweathermap.org/data/2.5/weather?q=' + searchCity + '&APPID=' + apiKey + '&units=imperial')
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchCity + '&APPID=' + apiKey + '&units=imperial')
             .then(function (response) {
                 return response.json();
             })
